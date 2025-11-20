@@ -7,108 +7,174 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: #0d0d0d;
-      color: #f2f2f2;
-      font-family: Arial, sans-serif;
+      background: #050505;
+      color: #e2e2e2;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
     }
+
+    /* Neon Glow */
+    .neon {
+      color: #e84142;
+      text-shadow: 0 0 10px #e84142, 0 0 20px #e84142, 0 0 40px #e84142;
+    }
+
+    /* Fade Animations */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Slide Up */
+    .slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 0.8s ease forwards;
+    }
+    @keyframes slideUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     header {
-      text-align: center;
-      padding: 40px 20px;
-      background: #111;
+      background: rgba(20, 20, 20, 0.8);
+      backdrop-filter: blur(8px);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     header img.logo {
-      width: 120px;
+      width: 90px;
+      filter: drop-shadow(0 0 8px #e84142);
     }
-    header h1 {
-      margin-top: 20px;
-      font-size: 36px;
-      font-weight: 700;
+    nav a {
+      color: #bbb;
+      margin-left: 25px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: 0.3s;
     }
-    header p {
-      font-size: 18px;
-      color: #ccc;
+    nav a:hover {
+      color: #e84142;
+      text-shadow: 0 0 8px #e84142;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 110px 20px 80px;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('assets/banner.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    .hero p {
       max-width: 600px;
-      margin: 10px auto 0;
+      margin: auto;
+      color: #ccc;
+      font-size: 20px;
     }
+
     section {
-      max-width: 900px;
-      margin: 50px auto;
+      max-width: 1100px;
+      margin: 70px auto;
       padding: 0 20px;
-      line-height: 1.6;
     }
-    section img {
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #e84142;
+      text-shadow: 0 0 10px #e84142;
+    }
+    img.full {
       width: 100%;
       border-radius: 12px;
       margin: 20px 0;
+      box-shadow: 0 0 15px #e84142;
     }
-    h2 {
-      margin-top: 40px;
-      font-size: 28px;
-      color: #e84142;
-    }
-    .roadmap li {
-      margin: 8px 0;
-    }
+
     footer {
       text-align: center;
-      margin: 50px 0 20px;
-      font-size: 14px;
+      padding: 40px 0;
       color: #777;
+      margin-top: 60px;
+    }
+
+    /* Extra Sections */
+    .token-box {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #e84142;
+      box-shadow: 0 0 15px #e84142 inset;
     }
   </style>
 </head>
 <body>
 
-<header>
+<header class="fade-in">
   <img src="assets/ibet_logo.png" class="logo" alt="iBET Logo">
-  <h1>iBET | GameLeverage</h1>
-  <p>Leverage your gameplay. Bet on your own assets. Powered by Avalanche Subnets.</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#how">How It Works</a>
+    <a href="#multi">Multi-Game</a>
+    <a href="#token">Token</a>
+    <a href="#tech">Tech</a>
+    <a href="#roadmap">Roadmap</a>
+  </nav>
 </header>
 
-<section>
+<div class="hero fade-in">
+  <h1 class="neon slide-up">iBET | GameLeverage</h1>
+  <p class="slide-up">Leverage your gameplay. Bet on your own assets. Built on Avalanche Subnets.</p>
+</div>
+
+<section id="about" class="fade-in">
   <h2>What is iBET?</h2>
-  <p>
-    iBET is a performance-based betting layer built as an Avalanche Subnet.  
-    Players stake once, and can bet on their own performance across multiple games — on-chain and later even Steam/off-chain titles.
-  </p>
-  <img src="assets/banner.png" alt="iBET Banner">
+  <p>iBET is a performance-based betting layer built as an Avalanche Subnet. Players stake once and bet on their own gameplay across multiple games — Web3 and off-chain (Steam) coming soon.</p>
+  <img src="assets/illustration.png" class="full" alt="Banner">
 </section>
 
-<section>
+<section id="how" class="fade-in">
   <h2>How It Works</h2>
-  <p>Clean and simple flow across all games:</p>
-  <p><strong>Join ➝ UX pop-up ➝ Bet ➝ Play</strong></p>
-  <p>More stake = bigger bet. Flexible odds based on your performance.</p>
+  <p><strong>Join → UX pop-up → Bet → Play</strong></p>
+  <p>More stake = bigger bet. Odds adjust based on your performance data.</p>
 </section>
 
-<section>
-  <h2>Why Avalanche?</h2>
-  <p>
-    Avalanche Subnets provide instant finality, low fees, scalability and the ability to customize tokenomics — ideal for real-time betting systems.
-  </p>
-</section>
-
-<section>
+<section id="multi" class="fade-in">
   <h2>Multi-Game Profile</h2>
-  <p>
-    One profile, one stake — access to betting across multiple games.  
-    Designed for Web3 games today and off-chain games tomorrow.
-  </p>
-  <img src="assets/illustration.png" alt="iBET Illustration">
+  <p>1 Profile → 1 Stake → All Games. iBET supports cross-chain and off-chain titles via an upcoming universal SDK.</p>
 </section>
 
-<section>
+<section id="token" class="fade-in">
+  <h2>iBET Token</h2>
+  <div class="token-box">
+    <p><strong>Utility:</strong></p>
+    <p>● Stake → unlock betting power<br>● Higher stake = bigger max bet<br>● Dynamic odds<br>● Multi-game betting<br>● Subnet gas token</p>
+  </div>
+</section>
+
+<section id="tech" class="fade-in">
+  <h2>Technology</h2>
+  <p><strong>Subnet:</strong> low-latency betting chain.</p>
+  <p><strong>Bet Engine:</strong> odds + payout system.</p>
+  <p><strong>Performance Oracle:</strong> reads results from Web3 & Steam.</p>
+  <p><strong>SDK:</strong> plug & play for devs.</p>
+</section>
+
+<section id="roadmap" class="fade-in">
   <h2>Roadmap</h2>
-  <ul class="roadmap">
-    <li>● Launch iBET Subnet testnet</li>
-    <li>● Staking + betting profile</li>
-    <li>● Odds engine + performance integration</li>
-    <li>● Onboard Web3 games</li>
-    <li>● Off-chain game integration prototype</li>
-    <li>● Mainnet subnet with multi-game support</li>
-  </ul>
+  <p>● Subnet testnet<br>● Staking + betting profiles<br>● Odds engine + oracle<br>● Game integrations<br>● Steam prototype<br>● Mainnet launch</p>
 </section>
 
 <footer>
