@@ -1,76 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>iBET Chain</title>
+  <meta charset="UTF-8">
+  <title>iBET | GameLeverage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      color: #f2f2f2;
       font-family: Arial, sans-serif;
-      background: #0a1a2f;
-      color: white;
-      text-align: center;
     }
     header {
+      text-align: center;
       padding: 40px 20px;
+      background: #111;
+      border-bottom: 1px solid #222;
     }
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+    header img.logo {
+      width: 120px;
     }
-    p {
-      font-size: 20px;
-      max-width: 700px;
-      margin: 0 auto;
-      opacity: 0.9;
+    header h1 {
+      margin-top: 20px;
+      font-size: 36px;
+      font-weight: 700;
     }
-    .btn {
-      display: inline-block;
-      background: #1ec683;
-      padding: 14px 28px;
-      border-radius: 8px;
-      color: #0a1a2f;
-      text-decoration: none;
+    header p {
       font-size: 18px;
-      font-weight: bold;
-      margin-top: 30px;
+      color: #ccc;
+      max-width: 600px;
+      margin: 10px auto 0;
     }
-    .section {
-      padding: 60px 20px;
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    section img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+    h2 {
+      margin-top: 40px;
+      font-size: 28px;
+      color: #e84142;
+    }
+    .roadmap li {
+      margin: 8px 0;
     }
     footer {
-      padding: 20px;
-      background: #081422;
+      text-align: center;
+      margin: 50px 0 20px;
       font-size: 14px;
-      opacity: 0.7;
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <header>
-    
-    <img src="ibet_logo.png" alt="iBET Chain Logo" width="140" />
-    <h1>iBET Chain</h1>
-    <p>The permissionless Layer 1 blockchain for asset‑based self‑betting. Starting with SnailTrail NFTs and expanding across Web3 gaming and even into non‑blockchain games.</p>
-    <a class="btn" href="#about">Learn More</a>
-  </header>
 
-  <div class="section" id="about">
-    <h2>What is iBET?</h2>
-    <p>iBET Chain lets players stake iBET tokens and place ownership‑verified performance predictions on their own in‑game assets. Built as a scalable Avalanche Subnet with full decentralization and cross‑game interoperability.</p>
-  </div>
+<header>
+  <img src="assets/logo.png" class="logo" alt="iBET Logo">
+  <h1>iBET | GameLeverage</h1>
+  <p>Leverage your gameplay. Bet on your own assets. Powered by Avalanche Subnets.</p>
+</header>
 
-  <div class="section">
-    <h2>Roadmap</h2>
-    <p>Phase 1: Testnet Launch<br>
-       Phase 2: SnailTrail Integration<br>
-       Phase 3: Permissionless Mainnet<br>
-       Phase 4: Multi‑Game Expansion</p>
-  </div>
+<section>
+  <h2>What is iBET?</h2>
+  <p>
+    iBET is a performance-based betting layer built as an Avalanche Subnet.  
+    Players stake once, and can bet on their own performance across multiple games — on-chain and later even Steam/off-chain titles.
+  </p>
+  <img src="assets/banner.png" alt="iBET Banner">
+</section>
 
-  <footer>
-    © 2025 iBET Chain — Powered by Avalanche
-  </footer>
+<section>
+  <h2>How It Works</h2>
+  <p>Clean and simple flow across all games:</p>
+  <p><strong>Join ➝ UX pop-up ➝ Bet ➝ Play</strong></p>
+  <p>More stake = bigger bet. Flexible odds based on your performance.</p>
+</section>
+
+<section>
+  <h2>Why Avalanche?</h2>
+  <p>
+    Avalanche Subnets provide instant finality, low fees, scalability and the ability to customize tokenomics — ideal for real-time betting systems.
+  </p>
+</section>
+
+<section>
+  <h2>Multi-Game Profile</h2>
+  <p>
+    One profile, one stake — access to betting across multiple games.  
+    Designed for Web3 games today and off-chain games tomorrow.
+  </p>
+  <img src="assets/illustration.png" alt="iBET Illustration">
+</section>
+
+<section>
+  <h2>Roadmap</h2>
+  <ul class="roadmap">
+    <li>● Launch iBET Subnet testnet</li>
+    <li>● Staking + betting profile</li>
+    <li>● Odds engine + performance integration</li>
+    <li>● Onboard Web3 games</li>
+    <li>● Off-chain game integration prototype</li>
+    <li>● Mainnet subnet with multi-game support</li>
+  </ul>
+</section>
+
+<footer>
+  © 2025 iBET | GameLeverage — Built on Avalanche 🔺
+</footer>
+
 </body>
 </html>
