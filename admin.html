@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>iBET Admin Panel</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+    }
+    input {
+      width: 250px;
+    }
+    button {
+      background-color: #e84142;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff4f4f;
+    }
+    .box {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>iBET Admin Panel</h1>
+<p>Manual race settlement (MVP mode)</p>
+
+<div class="box">
+  <label>Race ID:</label><br>
+  <input id="raceId" placeholder="e.g. 851189"><br>
+
+  <label>Winning Snail ID:</label><br>
+  <input id="winnerId" placeholder="e.g. 18392"><br>
+
+  <button onclick="settle()">Settle Race</button>
+</div>
+
+<script>
+async function settle() {
+  const raceId = document.getElementById("raceId").value;
+  const winnerId = document.getElementById("winnerId").value;
+
+  if (!raceId || !winnerId) {
+    alert("Enter race ID and winner snail ID!");
+    return;
+  }
+
+  try {
+    const resp = await fetch("http://localhost:3001/settleRace", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({ raceId, winningSnailId: winnerId })
+    });
+
+    const data = await resp.json();
+
+    if (data.error) {
+      alert("Error: " + data.error);
+    } else {
+      alert("Settlement sent!\nTX: " + data.txHash);
+    }
+  } catch (e) {
+    alert("Network error: " + e.message);
+  }
+}
+</script>
+
+</body>
+</html>
